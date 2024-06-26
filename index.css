@@ -1,0 +1,858 @@
+.image-container {
+    display: flex;
+gap: 20px; /* 이미지 사이에 20px 간격 추가 */
+width: 1920px; /* 컨테이너의 너비 설정 */
+overflow-x: auto; /* 컨테이너가 넘칠 경우 스크롤 가능하게 설정 */
+
+}
+
+.myImg {
+right: 400px;
+position: relative;
+cursor: pointer;
+width: auto;
+cursor: pointer;
+margin: 0 10px; /* 이미지 좌우에 10px 간격 추가 */
+border-radius: 10px;
+opacity: 0; /* 초기 상태에서 투명하게 설정 */
+transform: translateY(10px); /* 약간 아래쪽으로 이동 */
+transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* 더 빠르고 부드러운 페이드인 효과 */
+}
+.myImg.visible {
+opacity: 1; /* 스크롤 시 보이도록 설정 */
+transform: translateY(0); /* 원래 위치로 이동 */
+}
+
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgb(0,0,0);
+background-color: rgba(0,0,0,0.9);
+outline: solid 1px red;
+}
+
+
+.modal-content {
+margin: auto;
+display: block;
+width: 80%;
+max-width: 700px;
+}
+
+.modal-content img {
+margin: auto;
+display: block;
+width: 100%;
+max-width: 700px;
+}
+
+.modal-content #caption {
+margin: auto;
+display: block;
+width: 80%;
+max-width: 700px;
+text-align: center;
+color: #ccc;
+padding: 10px 0;
+height: 150px;
+}
+.close {
+position: absolute;
+top: 15px;
+right: 35px;
+color: #f1f1f1;
+font-size: 40px;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+color: #bbb;
+text-decoration: none;
+cursor: pointer;
+}
+
+.swiper{
+    width: 100%;
+padding-top: 300px;
+padding-bottom: 100px;
+margin-left: 200px;
+}
+.swiper-slide{
+background-position: center;
+background-size: cover;
+width: 300px;
+height: 380px;
+background-color: #ff98a9;
+border-radius: 10px;
+overflow: hidden;
+}
+.swiper-slide .imgBox{
+width: 100%;
+height: 300px;
+overflow: hidden;
+}
+.swiper-slide .imgBox img{
+width: 100%;
+}
+.swiper-slide .detail{
+box-sizing: border-box;
+font-size: 20px;
+padding: 20px;
+}
+.swiper-slide .detail h3{
+margin: 0;
+padding: 0;
+font-size: 20px;
+text-align: center;
+line-height: 20px;
+color: #ffffff;
+}
+.swiper-slide .detail h3 span{
+font-size: 16px;
+color: #ffffff;
+}
+
+
+.slideitem:hover img {
+filter: brightness(50%);
+}
+
+.slideitem:hover p {
+opacity: 1;
+}
+
+.slideitem p {
+position: absolute;
+opacity: 0;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1.5rem;
+font-weight: bold;
+color: #fff;
+background-color: rgba(0, 0, 0, 0.8);
+transition: opacity 0.5s ease-in-out;
+font-family: 'GmarketSans';
+text-align: center;
+line-height: 1.5;
+}
+
+.slideitem img{
+object-fit: cover;
+transition: filter 0.5s ease-in-out;
+}
+
+
+button{
+border:none;
+position:relative;
+height:60px;
+font-size:1.6em;
+padding:0 2em;
+cursor:pointer;
+transition:800ms ease all;
+outline:none;
+font-family: 'GmarketSans';
+}
+button:hover{
+background:#fff;
+color:#1AAB8A;
+}
+button:before,button:after{
+content:'';
+position:absolute;
+top:0;
+right:0;
+height:2px;
+width:0;
+background: #ffffff;
+transition:400ms ease all;
+}
+button:after{
+right:inherit;
+top:inherit;
+left:0;
+bottom:0;
+}
+button:hover:before,button:hover:after{
+width:100%;
+transition:800ms ease all;
+}
+
+
+.header {
+position: relative;
+max-width: 100%;
+max-height: 80px;
+margin: auto;
+padding: 20px;
+background-color: #774a56;
+}
+.btns {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 10;
+}  
+.btns_menu {
+display: flex;
+justify-content: center;
+}
+
+.btns_menu .btn {
+font-size: 16px;
+font-weight: 600;
+color: #ffffff;
+width: 150px;
+height: 40px;
+border-radius: 6px;
+margin: 4px;
+cursor: pointer;
+background-color: #ff98a9;
+font-family: 'GmarketSans';
+}
+
+.visual {
+    width: 1920px;
+    height: 850px;
+    margin: auto;
+    display: flex;
+    background-image: url(./img/메인2.png);
+}
+.visual .inner {
+    width: 1100px;
+    margin: 0 auto;
+    height: 646px;
+    position: relative;
+}
+.visual .pcup1 {
+    position: absolute;
+    bottom: 0;
+    left: 400px;
+    top: 180px;
+}
+.visual .pcup2 {
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+    top: 180px;
+}
+.visual .pcup3 img{
+    width: 900px;
+    height: 330px;
+    position: relative;
+    bottom: 0;
+    top: 200px;
+    right: 400px;
+    animation:ani 1s infinite alternate;
+}
+.visual .pcup4 img{
+    width: 150px;
+    height: 200px;
+    position: relative;
+    bottom: 0;
+    top: 150px;
+    left: 450px;
+    animation:ani 1s infinite alternate;
+}
+@keyframes ani{
+0%{transform:translate(0,0);}
+100%{transform:translate(0,20px);}
+}  
+
+
+.visual img{
+    width: 670px;
+    height: 670px;
+    margin-left: 150px;
+}
+
+
+.main{
+    width: 1400px;
+    height: 700px;
+    background-color: rgb(216, 55, 85);
+    margin: auto;
+    display: flex;
+    padding: 20px;
+    }
+    
+    .main img{
+        width: 10px;
+        height: 10px;
+    }
+    
+.container {
+    position: relative;
+    width: 1920px;
+    height: 900px;
+    padding: 20px;
+    margin: auto;
+    top: 80px;
+    background-color: #fdcfd6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container1 {
+    position: relative;
+    width: 1920px;
+    height: 900px;
+    padding: 20px;
+    margin: auto;
+    top: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/액정.png);
+    background-size: contain;
+    border-radius: 5px;
+    outline: solid 30px rgb(250, 149, 171);
+
+}
+
+.container2 {
+    position: relative;
+    width: 1920px;
+    height: 900px;
+    padding: 20px;
+    margin: auto;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/액정.png);
+    background-size: contain;
+    border-radius: 5px;
+    outline: solid 30px rgb(250, 149, 171);
+
+}
+.container3 {
+    position: relative;
+    width: 1920px;
+    height: 900px;
+    padding: 20px;
+    top: 260px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/집.png);
+    background-size: contain;
+
+}
+.container5 {
+    position: relative;
+    width: 1920px;
+    height: 850px;
+    padding: 20px;
+    margin: auto;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdcfd6;
+}
+
+.container8 {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    padding: 20px;
+    top: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #774a56;
+}
+
+
+.container8 h3{
+    font-family: 'GmarketSans';
+    font-size: 15px;
+    color: white;
+    bottom: 20px;
+    position: relative;
+}
+
+.mise{
+    position: relative;
+    width: 1920px;
+    height: 700px;
+    padding: 20px;
+    margin: auto;
+    top: 250px;
+    background-image: url(./img/액정.png);
+    background-size: contain;
+    border-radius: 5px;
+    outline: solid 30px rgb(250, 149, 171);
+}
+
+.mise h3{
+    position: relative;
+    font-family: 'GmarketSans';
+    font-size: 30px;
+    color: #141414;
+    bottom: 700px;
+    line-height: 60px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.mise h3.visible {
+    opacity: 1;
+}
+.um img{
+    width: 1920px;
+    height: 250px;
+    position: relative;
+    bottom: 250px;
+    left: 400px;
+}
+
+.light img{
+    width: 450px;
+    height: 230px;
+    position: relative;
+    right: 1400px;
+    top: 400px;
+    animation:ani 1s infinite alternate;
+}
+.light2 img{
+    width: 450px;
+    height: 230px;
+    position: relative;
+    bottom: 400px;
+    right: 60px;
+    animation:ani 1s infinite alternate;
+}
+
+.back-to-position {
+    opacity: 0;
+    transition: 1s;
+}
+.back-to-position.to-right {
+    transform: translateX(-120px);
+}
+.back-to-position.to-left {
+    transform: translateX(150px);
+}
+.show .back-to-position {
+    opacity: 1;
+    transform: translateX(0);
+}
+.show .back-to-position.delay-0 {
+    transition-delay: 0s;
+}
+.show .back-to-position.delay-1 {
+    transition-delay: .3s;
+}
+
+.work{
+    width: 960px;
+    height: 300px;
+    outline: solid 5px #ff98a9;
+    background-color: #fff;
+    margin-bottom: 350px;
+}
+.work img{
+    width: 920px;
+    height: 300px;
+}
+
+* {margin:0;padding:0;box-sizing:border-box;}
+ul, li {list-style:none;}
+
+
+.slidebox {max-width:800px;
+margin:0 auto;
+position:relative;
+top: 50px;
+right: 450px;
+}
+
+
+.slidebox .slidelist {position:relative;
+white-space:nowrap;
+font-size:0;
+overflow:hidden;
+margin-top: 40px;
+width: 500px;
+}
+
+.slidebox .slidelist .slideitem {position:relative;
+display:inline-block;
+vertical-align:middle;
+background-color:#fff;
+width:100%;
+transition:all 1s;}
+.slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
+.slidebox .slidelist .slideitem > a img {max-width:100%;}
+
+.slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+.slidebox .slide-control [class*="control"] label.prev {left:-50px;background:rgb(253, 181, 194) url('./img/왼쪽.png') center center / 50% no-repeat;}
+.slidebox .slide-control [class*="control"] label.next {right:-50px;background: rgb(253, 181, 194) url('./img/오른쪽.png') center center / 50% no-repeat;}
+
+[name="slide"] {display:none;}
+#slide01:checked ~ .slidelist .slideitem {left:0;}
+#slide02:checked ~ .slidelist .slideitem {left:-100%;}
+#slide03:checked ~ .slidelist .slideitem {left:-200%;}
+#slide04:checked ~ .slidelist .slideitem {left:-300%;}
+
+.slide-control [class*="control"] {display:none;}
+#slide01:checked ~ .slide-control .control01 {display:block;}
+#slide02:checked ~ .slide-control .control02 {display:block;}
+#slide03:checked ~ .slide-control .control03 {display:block;}
+#slide04:checked ~ .slide-control .control04 {display:block;}
+
+
+.mosion{
+position: relative;
+right: 350px;
+}
+.mosion video{
+position: relative;
+width: 1200px;
+height: 600px;
+display: flex;
+justify-content: center;
+margin-top: 40px;
+right: 10px;
+}
+
+h3 {margin-top: 50px;
+font-size: 40px;color: #ffffff;
+text-align: center;
+2px 2px 5px rgba(0,0,0,0.5); /* 입체감 주는 그림자 */
+background: linear-gradient(to right top, #ff82af, #ff82af);
+color: transparent;
+-webkit-background-clip: text;
+}
+.highlighter {background: linear-gradient(#f8abb8 0 100%); background-position: 0 calc(100% - 2px); background-size: 0 14px; background-repeat: no-repeat; transition: background-size 0.3s;}
+.highlighter.center {background-position: center calc(100% - 2px);} 
+.highlighter.right {background-position: right calc(100% - 2px);} 
+.highlighter:hover {background-size:100% 14px;}
+
+@font-face {
+font-family: 'neon';
+src: url('PyeongChangPeace-Bold.ttf') format('truetype');
+}
+
+body {
+font-family: 'neon';
+background: linear-gradient(#ebd0d4, #ffffff);
+}
+
+
+.wrap { transform: scale(1.2);}
+.temp-bg-back { transition: .1s ease-out; }
+
+header {
+margin: auto;
+display: flex;
+bottom: 600px;
+}
+
+.my {
+    width: 1440px;
+    height: 650px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.my_box h3{
+color: #fff;
+}
+
+.my_left{
+width: 450px;
+height: 450px;
+position: relative;
+background-image: url(./img/사진.png);
+border-radius: 15px;
+top: 130px;
+left: 50px;
+} 
+
+.my_right{
+margin-left: 700px;
+}
+.my_right h1{
+position: relative;
+text-align: left; 
+font-size: 35px;
+bottom: 280px;
+}
+
+.back-to-position {
+    opacity: 0;
+    transition: 1s;
+}
+.back-to-position.to-right {
+    transform: translateX(-150px);
+}
+.back-to-position.to-left {
+    transform: translateX(150px);
+}
+.show .back-to-position {
+    opacity: 1;
+    transform: translateX(0);
+}
+.show .back-to-position.delay-0 {
+    transition-delay: 0s;
+}
+.show .back-to-position.delay-1 {
+    transition-delay: .3s;
+}
+
+
+.my_right h2{
+position: relative;
+text-align: left; 
+font-size: 25px;
+bottom: 230px;
+}
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('GmarketSansLight.otf') format('truetype');
+}
+
+
+.my_down img{
+position: relative;
+width: 1200px;
+height: 130px;
+bottom: 120px;
+left: 20px;
+}
+.custom-font{
+    font-family: 'GmarketSans', 'truetype'; /* 정의한 폰트 사용 */
+    color: #ffffff; /* 폰트 색상 설정 */
+    font-weight: lighter; /* 필요에 따라 두께 조정 */
+}
+
+.default-font {
+    font-family: 'neon', sans-serif; /* 기본 고딕체로 설정 (예: Arial) */
+}
+
+
+
+.photo1{
+    position: relative;
+    width: 300px;
+    height: 700px;
+    left: 200px;
+}
+.photo1 img{
+    width: 500px;
+    height: 800px;
+    position: relative;
+    left: 1050px;
+    animation:ani 1s infinite alternate;
+}
+.photo2 img{
+    width: 400px;
+    height: 700px;
+    position: relative;
+    right: 130px;
+    bottom: 10px;
+    animation:ani 1s infinite alternate;
+}
+.photo3 img{
+    width: 300px;
+    height: 750px;
+    position: relative;
+    left: 1200px;
+    bottom: 10px;
+    animation:ani 1s infinite alternate;
+}
+.photo4 img{
+    width: 300px;
+    height: 750px;
+    position: relative;
+    left: 100px;
+    bottom: 100px;
+    animation:ani 1s infinite alternate;
+}
+.photo5 img{
+    width: 400px;
+    height: 500px;
+    position: relative;
+    animation:ani 1s infinite alternate;
+    right: 100px;
+}
+.photo8 img{
+    width: 300px;
+    height: 500px;
+    position: relative;
+    animation:ani 1s infinite alternate;
+    left: 1150px;
+}
+
+.light3 img {
+    width: 450px;
+    height: 430px;
+    position: relative;
+    bottom: 700px;
+    right: 60px;
+    animation:ani 1s infinite alternate;
+}
+.um_left img{
+    width: 250px;
+    height: 350px;
+    position: relative;
+    left: 1px;
+    right: 20px;
+    animation:ani 1s infinite alternate;
+    top: 300px;
+}
+.um_right img{
+    width: 200px;
+    height: 350px;
+    position: relative;
+    left: 1200px;
+    right: 40px;
+    bottom: 200px;
+    animation:ani 1s infinite alternate;
+}
+.text1 img{
+    width: 230px;
+    height: 120px;
+    position: relative;
+    bottom: 370px;
+    left: 130px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.text1 img.visible {
+    opacity: 1;
+}
+
+.text2 img{
+    width: 370px;
+    height: 120px;
+    position: relative;
+    top: 0px;
+    left: 400px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.text2 img.visible {
+    opacity: 1;
+}
+.text3 img{
+    width: 440px;
+    height: 120px;
+    position: relative;
+    left: 280px;
+    bottom: 100px;
+}
+.text4 img{
+    width: 220px;
+    height: 140px;
+    position: relative;
+    left: 800px;
+    top: 50px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.text4 img.visible {
+    opacity: 1;
+}
+.text5 img{
+    width: 220px;
+    height: 140px;
+    bottom: 300px;
+    position: relative;
+    left: 850px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.text5 img.visible {
+    opacity: 1;
+}
+footer{
+    width: 100%;
+    height: 150px;
+    background-color: #774d5b;
+    top: 700px;
+}
+footer h3{
+    position: relative;
+    font-size: 15px;
+    color: #ffffff;
+    font-family: neon1;
+    top: 70px;
+}
+
+body {
+font-size: 16px;
+}
+
+@media (max-width: 768px) {
+body {
+font-size: 14px;
+}
+
+.container1 {
+width: 100%;
+padding: 10px;
+}
+.container2 {
+width: 100%;
+padding: 10px;
+}
+.container3 {
+width: 100%;
+padding: 10px;
+}
+.container4 {
+width: 100%;
+padding: 10px;
+}
+.container5 {
+width: 100%;
+padding: 10px;
+}
+.container6 {
+width: 100%;
+padding: 10px;
+}
+
+.header {
+font-size: 24px;
+}
+
+.footer {
+display: none;
+}
+.visual {
+width: 100%;
+padding: 10px;
+}
+}
